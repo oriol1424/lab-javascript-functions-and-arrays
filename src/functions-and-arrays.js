@@ -1,24 +1,44 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(number1, number2) {
+  if (number1 > number2) {
+    return number1;
+
+  } else if (number2 > number1) {
+    return number2;
+  }
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(arrays) {
+  let longest = "";
+  let length = 0;
+
+  arrays.forEach(element => {
+
+    if (element.length > length) {
+      length = element.length;
+      longest = element;
+    }
+  });
+  return longest;
+}
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
-
-
-// Iteration #3.1 Bonus:
-function sum() {}
+function sumNumbers(numbers) {
+  let result = 0;
+  numbers.forEach(element => {
+    result += element;
+  });
+  return result;
+}
 
 
 
@@ -26,16 +46,29 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
 
+  let sum = sumNumbers(numbersAvg);
+  return sum / sumNumbers.length;
+}
+
+// Bonus - Iteration #4.1
+function avg() {}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) { 
+  let sizeWord = 0;
 
-// Bonus - Iteration #4.1
-function avg() {}
+  wordsArr.forEach(element => {
+    sizeWord += element.length;
+  });
+
+  return sizeWord / wordsArr.length;
+}
+
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -52,14 +85,30 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) {
+  const newArray = [];
+
+  wordsUnique.forEach(element => {
+    if (newArray.indexOf(element) === -1) {
+      newArray.push(element);
+    }
+  });
+  return newArray;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordsFind, word) {
+  wordsFind.forEach(element => {
+    if (element == word){
+      return true;
+    }
+  });
+  return false;
+}
 
 
 
@@ -78,7 +127,10 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsCount, word) {
+  let filtro = wordsCount.filter((element) => element === word );
+  return filtro.length;
+}
 
 
 
